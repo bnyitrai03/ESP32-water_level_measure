@@ -4,7 +4,8 @@
 - **Scope**: 
 
 ## 2. System Overview
-- **System Architecture**: 
+- **System Architecture**:
+
 ![System architecture](system_design.png)
 - **Key Components**: 
     - ESP32 Microcontroller
