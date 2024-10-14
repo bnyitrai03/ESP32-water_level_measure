@@ -1,7 +1,6 @@
-# Technical Design Document for ESP32-Based Water-Level Detecting Application
+# ESP32-Based Water-Level Measuring Application
 ## 1. Introduction
-- **Purpose**: 
-- **Scope**: 
+- **Purpose**: Measuring the water level in the tank, when refilling it. Set an alarm if it's going to overflow.
 
 ## 2. System Overview
 - **System Architecture**:
