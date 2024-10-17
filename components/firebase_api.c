@@ -1,4 +1,4 @@
-#include "esp_http_client.h"
+/* #include "esp_http_client.h"
 #include "esp_log.h"
 #include "firebase_api.h"
 
@@ -44,4 +44,4 @@ esp_err_t firebase_get() {
     }
     esp_http_client_cleanup(client);
     return err;
-}
+} */

@@ -2,7 +2,6 @@
  * SPDX-FileCopyrightText: 2021-2022 Espressif Systems (Shanghai) CO LTD
  *
  * SPDX-License-Identifier: Unlicense OR CC0-1.0
- */
 
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
@@ -45,7 +44,7 @@ static bool hc_sr04_echo_callback(mcpwm_cap_channel_handle_t cap_chan, const mcp
 
 /**
  * @brief generate single pulse on Trig pin to start a new sample
- */
+
 static void gen_trig_output(void)
 {
     gpio_set_level(HC_SR04_TRIG_GPIO, 1); // set high
@@ -117,3 +116,4 @@ void app_main(void)
         vTaskDelay(pdMS_TO_TICKS(500));
     }
 }
+ */

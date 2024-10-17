@@ -1,4 +1,4 @@
-#include "esp_wifi.h"
+/* #include "esp_wifi.h"
 #include "esp_event.h"
 #include "esp_log.h"
 #include "wifi.h"
@@ -41,4 +41,4 @@ void wifi_init_sta(void) {
     esp_wifi_set_mode(WIFI_MODE_STA);
     esp_wifi_set_config(ESP_IF_WIFI_STA, &wifi_config);
     esp_wifi_start();
-}
+} */
