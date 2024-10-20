@@ -1,9 +1,4 @@
-/*
- * SPDX-FileCopyrightText: 2021-2022 Espressif Systems (Shanghai) CO LTD
- *
- * SPDX-License-Identifier: Unlicense OR CC0-1.0
-
-#include "freertos/FreeRTOS.h"
+/* #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "esp_log.h"
 #include "esp_private/esp_clk.h"
@@ -115,5 +110,4 @@ void app_main(void)
         }
         vTaskDelay(pdMS_TO_TICKS(500));
     }
-}
- */
+} */
