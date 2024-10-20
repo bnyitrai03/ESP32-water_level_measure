@@ -4,6 +4,7 @@
 #include "esp_private/esp_clk.h"
 #include "driver/mcpwm_cap.h"
 #include "driver/gpio.h"
+#include "driver/mcpwm_prelude.h"
 
 const static char *TAG = "example";
 
@@ -36,10 +37,6 @@ static bool hc_sr04_echo_callback(mcpwm_cap_channel_handle_t cap_chan, const mcp
 
     return high_task_wakeup == pdTRUE;
 }
-
-/**
- * @brief generate single pulse on Trig pin to start a new sample
-
 static void gen_trig_output(void)
 {
     gpio_set_level(HC_SR04_TRIG_GPIO, 1); // set high

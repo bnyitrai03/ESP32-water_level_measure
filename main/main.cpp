@@ -1,29 +1,26 @@
-#include "sdkconfig.h"
-#include <iostream>
+#include "esp_log.h"
+#include "esp_sleep.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
+#include "sdkconfig.h"
 
+#include "HC_SR04.h"
+#include "MCPWM.h"
 #include "main.h"
 
-void HelloCMake::run(int i)
-{
-    std::cout << "Hello World from C++ "<< i << '\n';
+static const char *TAG = "main";
+
+void run_main() {
+  Mcpwm timer;
+  HC_SR04 sensor;
+
+  timer.start();
+  while (true) {
+    ESP_LOGI(TAG, "Everything has been initialized!!!");
+    ESP_LOGI(TAG, "Sleeping for 1 sec...");
     vTaskDelay(pdMS_TO_TICKS(1000));
-
+    ESP_LOGI(TAG, "Woke up");
+  }
 }
 
-void run_main(){
-    HelloCMake App;
-    int i = 0;
-
-    while (true)
-    {
-        App.run(i);
-        i++;
-    }    
-}
-
-extern "C" void app_main(void)
-{
-    run_main();
-}
+extern "C" void app_main(void) { run_main(); }

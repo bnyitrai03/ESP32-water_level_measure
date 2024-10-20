@@ -1,28 +1,20 @@
 #include "HC_SR04.h"
-#include "driver/gpio.h"
-#include "driver/mcpwm_prelude.h"
 
 static const char *TAG = "HC_SR04";
 
-class mcpwm {
-private:
-  mcpwm_cap_timer_handle_t _timer;
-  mcpwm_capture_timer_config_t _timer_config;
+HC_SR04::HC_SR04() {
+  gpio_config_t trig_pin;
+  trig_pin.mode = GPIO_MODE_OUTPUT;
+  trig_pin.pin_bit_mask = 1ULL << HC_SR04_TRIG_GPIO;
+  ESP_ERROR_CHECK(gpio_config(&trig_pin));
+  ESP_LOGI(TAG, "Configured Trig pin");
 
-public:
-  mcpwm() {
-    _timer_config.clk_src = MCPWM_CAPTURE_CLK_SRC_DEFAULT;
-    _timer_config.group_id = 0;
+  // drive low by default
+  ESP_ERROR_CHECK(gpio_set_level(HC_SR04_TRIG_GPIO, 0));
+}
 
-    ESP_ERROR_CHECK(mcpwm_new_capture_timer(&_timer_config, &_timer));
-    ESP_LOGI(TAG, "Capture timer registered");
-  }
-};
-
-class HC_SR04 {
-private:
-  static void gen_trig_output(void);
-
-public:
-  HC_SR04() {}
-};
+void HC_SR04::generate_trig() {
+  gpio_set_level(HC_SR04_TRIG_GPIO, 1);
+  esp_rom_delay_us(10);
+  gpio_set_level(HC_SR04_TRIG_GPIO, 0);
+}
