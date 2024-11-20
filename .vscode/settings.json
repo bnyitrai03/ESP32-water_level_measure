@@ -1,0 +1,10 @@
+{
+  "C_Cpp.intelliSenseEngine": "default",
+  "idf.portWin": "COM6",
+  "idf.adapterTargetName": "esp32",
+  "idf.flashType": "UART",
+  "clang-format.executable": "E:/cuccok/LLVM/bin/clang-format.exe",
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "C_Cpp.errorSquiggles": "enabled"
+}
